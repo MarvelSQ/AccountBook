@@ -1,62 +1,30 @@
-# AccountBook
-## 我的账本
+# accountbook
 
-由于找不到一款试用的账本软件，我希望籍此来搭建一个记录账本的平台
+> A accoutbook based on vue
 
-1. 具备基本的记账功能
-2. 具备多个账户角色的功能
-3. 具备分账功能
+## Build Setup
 
+``` bash
+# install dependencies
+npm install
 
-## 记账功能：
-记录信息是本平台的核心功能
+# serve with hot reload at localhost:8080
+npm run dev
 
-| 日期           | 时间        | 金额   |
-| ------------- |-------------| -----:|
-| 2017-04-12    | 15:23       |   ¥160|
-| 2017-04-12    | 19:30       |    ¥17|
-| 2017-04-13    | 08:21       |    ¥27|
+# build for production with minification
+npm run build
 
-统计功能
+# build for production and view the bundle analyzer report
+npm run build --report
 
-| 月份           | 金额        |
-| ------------- |------------:|
-| 2017-02       | ¥3840       |
-| 2017-03       | ¥1260       |
-| 2017-04       | ¥967       |
+# run unit tests
+npm run unit
 
-支出，收入及分类
+# run e2e tests
+npm run e2e
 
-| 支出／收入      | 金额       |类别|
-| ------------- |------------|------:|
-| 支出       | ¥10       |早餐|
-| 收入       | ¥1260       |补助|
-| 支出       | ¥20       |奶茶|
+# run all tests
+npm test
+```
 
-## 多个账户角色
-每个人在日常生活中经常涉及到多个资金源
-
-|账户名     |金额     |
-|----------|-------:|
-|现金      |¥2000|
-|支付宝    |¥1800|
-|银行卡    |¥500|
-
-账户也可扩展到不同的用户
-
-|账户名     |金额     |
-|----------|-------:|
-|张三      |¥2500|
-|李四    |¥2100|
-|王五    |¥1500|
-
-## 分账功能
-多个用户角色就会涉及到分账
-
-|日期     |时间     |金额   |账户  |用户|
-|---------|-------|------|----|--:|
-|04-10   |12:20    |¥2500|现金|张三|
-|04-12   |16:42    |¥2100|支付宝|李四|
-|04-14   |07:20    |¥1500|支付宝|公共|
-
-
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
