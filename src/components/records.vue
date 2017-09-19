@@ -1,6 +1,12 @@
 <template>
   <div class="records">
     <div class="wrapper">
+    <div class="filter">
+      <el-radio-group v-model="filter.type">
+        <el-radio-button v-for="type in filter.types" :key="type.key" :label="type"></el-radio-button>
+      </el-radio-group>
+      <el-input placeholder="filter..."></el-input>
+    </div>
     <ul>
       <li v-for="record in records" :key="record.id">
         <div class="maintain">
@@ -11,7 +17,7 @@
         </span>
       </div>
         <div class="side">
-          <div><i class="icon"></i><span><span class="names" v-for="mate in record.mates" :key="mate.id">{{mate.name}}</span></span></div>
+          <div><i class="icon"></i><span class="names" v-for="mate in record.mates" :key="mate.id">{{mate.name}}</span></div>
           <div><i class="icon"></i>{{record.type}}</div>
         </div>
       </li>
@@ -25,6 +31,20 @@
   }
   .wrapper{
     max-width: 600px;
+  }
+  .filter{
+    padding:10px 0 15px 0;
+    text-align: left;
+    overflow: hidden;
+  }
+  .filter .el-radio-group{
+    float: left;
+    width: 66.7%;
+  }
+  .filter .el-input{
+    float: right;
+    max-width: 150px;
+    width: 20%
   }
   ul{
     list-style: none;
@@ -186,13 +206,20 @@
   .names{
     cursor: pointer;
   }
-  .names:first-child::before{
-    content:none;
-  }
-  .names::before{
-    content:',';
+  .names{
     padding-right: 8px;
   }
+  .names:last-child{
+    padding-right: 0;
+  }
+  /*div>.names:first-child::before{
+    content: none;
+    padding-right: 0;
+  }
+  div>.names::before{
+    content:',';
+    padding-right: 8px;
+  }*/
 
 </style>
 
@@ -201,6 +228,14 @@
 
   export default {
     name: 'records',
+    data() {
+      return {
+        filter: {
+          type: '',
+          types: ['enjoy', 'work', 'sport', 'movie', 'food'],
+        },
+      };
+    },
     computed: {
       ...mapGetters({
         records: 'getRecords',
