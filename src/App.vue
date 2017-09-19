@@ -1,23 +1,44 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
-  </div>
+<div id="app">
+  <router-view></router-view>
+</div>
 </template>
 
 <script>
 export default {
   name: 'app',
+  data() {
+    return {
+      routerMode: true,
+      defaultIndex: '1',
+    };
+  },
+  beforeMount() {
+
+  },
+  methods: {
+    judgeLogState() {
+
+    },
+  },
 };
 </script>
 
 <style>
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  height: 100%;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
+  overflow: scroll;
 }
 </style>
