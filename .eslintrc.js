@@ -9,10 +9,14 @@ module.exports = {
   env: {
     browser: true,
   },
-  extends: 'airbnb-base',
+  extends: [
+    'airbnb-base',
+    'plugin:flowtype/recommanded',
+  ],
   // required to lint *.vue files
   plugins: [
-    'html'
+    'html',
+    'flowtype',
   ],
   // check if imports actually resolve
   'settings': {

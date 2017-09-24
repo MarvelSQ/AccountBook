@@ -93,7 +93,7 @@ export default {
       }
       // c.rotate(-Math.PI / 6);
       // eslint-disable-next-line
-      console.log(c);
+      // console.log(c);
       // c.fillText('¥ 20 小王', 0, 40);
     },
   },
@@ -129,17 +129,22 @@ export default {
       switch (val) {
         case 'unlog':
         case 'log fail':
-          this.$notify({
-            title: val,
+          this.$message({
             message: this.logMsg,
-            type: 'info',
+            type: 'warning',
           });
           this.$router.push('/login');
           break;
         case 'logging':
-          this.$notify({
-            title: val,
+          this.$message({
+            message: val,
             type: 'info',
+          });
+          break;
+        case 'logged':
+          this.$message({
+            message: val,
+            type: 'success',
           });
           break;
         default:
@@ -167,7 +172,7 @@ export default {
 <style lang="css" scoped>
   .main {
     height: 100%;
-    position: relative;
+    /*position: relative;*/
     display: flex;
     flex-direction: column;
   }
@@ -206,8 +211,8 @@ export default {
   }
   .router-view{
     flex-grow: 1;
-    /*position: absolute;
-    top: 60px;
+    position: relative;
+    /*top: 60px;
     bottom: 0;
     left: 0;
     right: 0;*/

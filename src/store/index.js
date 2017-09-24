@@ -19,6 +19,13 @@ function persistenceUser(user) {
   localStorage.setItem('user', JSON.stringify(Object.assign(user, { decay: (new Date().getTime() + 3600000) })));
 }
 
+/**
+ * remove decay from localStorage user
+ * @param  {String} name     [description]
+ * @param  {String} password [description]
+ * @param  {String} id       [description]
+ * @return {Object}          [description]
+ */
 function changeUser({ name, password, id }) {
   return { name, password, id };
 }
@@ -109,6 +116,8 @@ export default new Vuex.Store({
       state.logMsg = msg;
     },
     [types.LOGGING](state) {
+      // eslint-disable-next-line
+      console.log(state);
       state.log = 'logging';
     },
     [types.LOGIN_SUCCESS](state, user) {

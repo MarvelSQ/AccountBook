@@ -45,21 +45,24 @@ export default {
       switch (val) {
         case 'log fail':
         case 'signup fail':
-          this.$notify({
-            title: val,
+          this.$message({
             message: this.logMsg,
             type: 'error',
           });
           break;
         case 'logging':
         case 'signing':
-          this.$notify({
-            title: val,
+          this.$message({
+            message: val,
             type: 'info',
           });
           break;
         case 'signup success':
         case 'logged':
+          this.$message({
+            message: `${val} jump to home`,
+            type: 'success',
+          });
           this.$router.push('/');
           break;
         default:

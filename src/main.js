@@ -6,16 +6,23 @@ import '../theme/index.css';
 import App from './App';
 import router from './router';
 import store from './store';
+import DomBinder from './plugin/DomBinder';
 
 Vue.config.productionTip = false;
 
 Vue.use(elementUI);
+Vue.use(DomBinder);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
+  data() {
+    return {
+      dom: this.dom,
+    };
+  },
   template: '<App/>',
   components: { App },
 });
