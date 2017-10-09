@@ -11,7 +11,6 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
-    'plugin:flowtype/recommanded',
   ],
   // required to lint *.vue files
   plugins: [

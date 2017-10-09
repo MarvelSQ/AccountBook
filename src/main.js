@@ -18,11 +18,6 @@ new Vue({
   el: '#app',
   router,
   store,
-  data() {
-    return {
-      dom: this.dom,
-    };
-  },
   template: '<App/>',
   components: { App },
 });
